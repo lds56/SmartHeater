@@ -1,0 +1,14 @@
+* SmartHeater
+
+** TODO-LIST
+*** TODO [#A] Basic Functio
+*** TODO [#A] UI [%]
+**** TODO View switching [1/2]
+***** DONE View A1 and View A2
+	  CLOSED: [2015-03-18 Wed 22:35]
+***** TODO View A and View B 
+**** TODO Statistics View
+	 SCHEDULED: <2015-03-19 Thu>
+**** TODO Live digital clock
+**** TODO Color
+**** TODO Drawer
