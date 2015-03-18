@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <!-- layout title -->
+    <LinearLayout
+        android:id="@+id/layout_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_bluetooth_white_dialig"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:text="lds's bluetooth"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <!--LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingLeft="25dp"
+            android:gravity="center|left"
+            android:text="Bluetooth list"
+            android:textSize="21dp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="#000000" />
+
+    </LinearLayout-->
+
+    <!--RelativeLayout
+        android:id="@+id/layout_dialog_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:text="@android:string/cancel"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textColor="#0F988A"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/btn_open_browser" />
+
+        <Button
+            android:id="@+id/btn_open_browser"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right"
+            android:layout_marginRight="25dp"
+            android:text="connect"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:textColor="#0F988A"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout-->
+
+</LinearLayout>

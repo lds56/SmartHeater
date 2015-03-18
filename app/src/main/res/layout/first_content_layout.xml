@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:id="@+id/textRow2">
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/left_image1"
+                android:src="@drawable/ic_access_alarm_pink"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/left_image1"
+                android:paddingLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/sub_row_width"
+                    android:layout_height="@dimen/sub_row_height"
+                    android:text="12:00 Tue"
+                    android:textColor="@color/info_text"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView2"
+                    android:textSize="@dimen/primary_content_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="@dimen/sub_row_width"
+                    android:layout_height="@dimen/sub_row_height"
+                    android:text="Alarm"
+                    android:textColor="@color/sub_info_text"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView25"
+                    android:textSize="@dimen/second_content_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="@dimen/item_height"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_add_alarm_pink"
+                android:layout_marginEnd="@dimen/riw_right_margin"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:orientation="horizontal"
+            android:id="@+id/textRow3">
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/left_image2"
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/left_image2"
+                android:paddingLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/sub_row_width"
+                    android:layout_height="@dimen/sub_row_height"
+                    android:text="Auto"
+                    android:textColor="@color/info_text"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView3"
+                    android:textSize="@dimen/primary_content_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="@dimen/sub_row_width"
+                    android:layout_height="@dimen/sub_row_height"
+                    android:text="Heat Mode"
+                    android:textColor="@color/sub_info_text"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView35"
+                    android:textSize="@dimen/second_content_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+            </LinearLayout>
+
+            <!--Switch
+                android:layout_width="@dimen/item_height"
+                android:layout_height="wrap_content"
+                android:text="New Switch"
+                android:id="@+id/switch1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"/-->
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/theme_switch"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/riw_right_margin"
+                android:theme="@style/AppTheme"
+                android:layout_gravity="center_vertical"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/right_length"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout">
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="match_parent"
+                android:id="@+id/left_image3"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/left_image3"
+                android:src="@drawable/line"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

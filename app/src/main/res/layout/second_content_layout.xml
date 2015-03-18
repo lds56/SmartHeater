@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/row_container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <!--<include-->
+        <!--android:id="@+id/sample_row1"-->
+        <!--layout="@layout/view_sample_row"/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/a_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_title2"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/card_title"
+                android:text="Temperature"/>
+
+            <ImageView
+                android:layout_width="@dimen/card_img_size"
+                android:layout_height="@dimen/card_img_size"
+                android:layout_margin="@dimen/card_content_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/temp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title2"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/content_gap_margin"
+                android:layout_marginBottom="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size_small"
+                android:textColor="@color/card_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="34 °C"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/a_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_title"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/card_title"
+                android:text="Elapsed Time"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/card_content_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/timer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/content_gap_margin"
+                android:layout_marginBottom="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size_small"
+                android:textColor="@color/card_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="00:00:00"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/a_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_title3"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/card_title"
+                android:text="Status"/>
+
+            <ImageView
+                android:layout_width="@dimen/card_img_size"
+                android:layout_height="@dimen/card_img_size"
+                android:layout_margin="@dimen/card_content_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/up"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title3"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/content_gap_margin"
+                android:layout_marginBottom="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size_small"
+                android:textColor="@color/card_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Heating"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/a_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_title4"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/card_title"
+                android:text="Mood"/>
+
+            <ImageView
+                android:layout_width="@dimen/card_img_size"
+                android:layout_height="@dimen/card_img_size"
+                android:layout_margin="@dimen/card_content_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/face"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title4"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/content_gap_margin"
+                android:layout_marginBottom="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size_small"
+                android:textColor="@color/card_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="( ゜- ゜)つロ"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

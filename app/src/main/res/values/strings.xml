@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_my_activity2">MyActivity2</string>
+    <string name="action_example">Example action</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_nav_drawer">NavDrawerActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_closed">Drawer Closed</string>
+    <string name="action_search">Action Search</string>
+    <string name="action_share">Action Share</string>
+    <string name="action_equalizer">Action Equalizer</string>
+    <string name="action_bluetooth">Action Bluetooth</string>
+    <string name="dialog_title">Bluetooth List</string>
+    <string name="connect">Connect</string>
+    <string name="cancel">Cancel</string>
+
+</resources>

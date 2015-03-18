@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity"
+    >
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/content_list2"
+        android:background="@color/universal_backgroud"
+        >
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1"
+            >
+
+            <include layout="@layout/second_content_layout" />
+
+        </TableLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fat_bar_height"
+        android:background="@color/theme_default_primary"
+        android:id="@+id/holder_view">
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"/>
+
+
+        <!--com.saulmm.material.waveview.WaveView
+            android:layout_width="match_parent"
+            android:layout_height="224dp"
+            android:id="@+id/holder_view"
+            android:layout_below="@id/toolbar"
+            android:transitionName="holder1"
+            android:background="?android:colorPrimary"
+            /-->
+
+
+    <!--android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/sample_content_fragment"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0px" />
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <fragment android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/navigation_drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:name="com.saulmm.material.fragments.NavigationFragment"
+            tools:layout="@layout/fragment_navigation_drawer" />
+
+    </android.support.v4.widget.DrawerLayout-->
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/end_position"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:id="@+id/start_position"
+        android:visibility="invisible"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/holder_view"
+        android:layout_marginTop="-26dp"
+        android:layout_alignParentEnd="true"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/holder_view"
+        android:id="@+id/content_list"
+        android:background="@color/universal_backgroud"
+        >
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1"
+            >
+
+            <include layout="@layout/first_content_layout" />
+
+        </TableLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shadow_bar"
+        android:layout_below="@id/holder_view"
+        android:background="@drawable/bottom_shadow2"/>
+
+    <Button
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fab_button"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:background="@drawable/ic_whatshot_fab"
+        android:elevation="5dp"
+
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/holder_view"
+        android:layout_marginTop="-26dp"
+        android:layout_alignParentEnd="true"
+        />
+
+</RelativeLayout>
