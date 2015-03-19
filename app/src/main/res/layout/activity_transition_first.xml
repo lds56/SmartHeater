@@ -26,6 +26,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_bg"
+        android:background="@color/theme_default_primary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="@dimen/fat_bar_height"
         android:background="@color/theme_default_primary"
         android:id="@+id/holder_view">
@@ -34,6 +40,7 @@
         <whatever.smartheater.waveview.WaveView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/wave_view"
             android:transitionName="holder1"
             wave:progress="50"
             wave:wave_hz="slow"
@@ -157,8 +164,8 @@
     <ImageButton
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fab_button"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_whatshot_fab"
         android:background="@android:color/transparent"

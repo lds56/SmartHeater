@@ -5,6 +5,7 @@ package whatever.smartheater;
 //import android.transition.Slide;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import static whatever.smartheater.Constants.*;
 //import android.view.animation.PathInterpolator;
 
 public class Utils {
@@ -38,12 +39,12 @@ public class Utils {
     public static void slideUp(View theView, float delta) {
         theView.animate().setInterpolator(new AccelerateDecelerateInterpolator())
                 .translationY(-delta)
-                .setDuration(500);
+                .setDuration(ANIMATION_TIME);
     }
 
     public static void slideDown(View theView) {
         theView.animate().setInterpolator(new AccelerateDecelerateInterpolator())
                 .translationY(0)
-                .setDuration(500);
+                .setDuration(ANIMATION_TIME);
     }
 }

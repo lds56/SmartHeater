@@ -44,8 +44,8 @@
     <style name="AppTheme.DialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:colorPrimary">@color/theme_default_primary</item>
         <item name="android:colorPrimaryDark">@color/theme_default_primary_dark</item>
-        <item name="android:colorAccent">@color/accent</item>
-        <item name="android:colorControlActivated">@color/accent</item>
+        <item name="android:colorAccent">@color/theme_default_primary_dark</item>
+        <item name="android:colorControlActivated">@color/theme_default_primary_dark</item>
     </style>
 
 </resources>

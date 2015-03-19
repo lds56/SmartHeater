@@ -74,8 +74,12 @@ public class TransitionFirstActivity extends ActionBarActivity {
 
             View fatBar = findViewById(R.id.holder_view);
             View shadowBar = findViewById(R.id.shadow_bar);
+            View waterContainer = findViewById(R.id.water_container);
+            View waveView = findViewById(R.id.wave_view);
+
             View contentList = findViewById(R.id.content_list);
             View contentList2 = findViewById(R.id.content_list2);
+
             float barGap = fatBar.getHeight() - mainToolbar.getHeight();
             float bottomGap = contentList.getHeight();
             Log.i("oo", "now: " + view.getX());
@@ -89,11 +93,16 @@ public class TransitionFirstActivity extends ActionBarActivity {
                         .y(Utils.getCenterY(endButton) - view.getHeight() / 2)
                         .setDuration(500);
 
-//                // Fat Bar animation
+
+                // Fat Bar animation
+                waveView.animate().alpha(0).setDuration(ANIMATION_TIME);
+                waterContainer.animate().alpha(0).setDuration(ANIMATION_TIME / 2);
+
                 Utils.slideUp(fatBar, barGap);
                 Utils.slideUp(shadowBar, barGap);
-                Utils.slideUp(contentList, -bottomGap);
 
+                // Content
+                Utils.slideUp(contentList, -bottomGap);
 
             } else if (Utils.getCenterX(view) == Utils.getCenterX(endButton)) { //Move up
                 fabButton.animate().setInterpolator(new AccelerateDecelerateInterpolator())
@@ -101,9 +110,15 @@ public class TransitionFirstActivity extends ActionBarActivity {
                         .y(Utils.getCenterY(startButton) - view.getHeight() / 2)
                         .setDuration(500);
 
+
                 // Fat Bar animation
+                waveView.animate().alpha(1).setDuration(ANIMATION_TIME);
+                waterContainer.animate().alpha(1).setStartDelay(ANIMATION_TIME / 2).setDuration(ANIMATION_TIME / 2);
+
                 Utils.slideDown(fatBar);
                 Utils.slideDown(shadowBar);
+
+                //Content
                 Utils.slideDown(contentList);
 
             } else {

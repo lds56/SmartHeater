@@ -18,6 +18,49 @@
         <!--android:id="@+id/sample_row1"-->
         <!--layout="@layout/view_sample_row"/>-->
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/a_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_title"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/card_title"
+                android:text="Elapsed Time"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/card_content_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/timer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_title"
+                android:layout_marginStart="@dimen/card_content_margin"
+                android:layout_marginTop="@dimen/content_gap_margin"
+                android:layout_marginBottom="@dimen/card_content_margin"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/card_text_size_small"
+                android:textColor="@color/card_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="00:00:00"/>
+
+        </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,6 +103,7 @@
 
         </RelativeLayout>
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,14 +114,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/card_title"
+                android:id="@+id/card_title25"
                 android:layout_marginStart="@dimen/card_content_margin"
                 android:layout_marginTop="@dimen/card_content_margin"
                 android:gravity="center_vertical|center_horizontal"
                 android:textSize="@dimen/card_text_size"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/card_title"
-                android:text="Elapsed Time"/>
+                android:text="Percent"/>
 
             <ImageView
                 android:layout_width="50dp"
@@ -85,12 +129,12 @@
                 android:layout_margin="@dimen/card_content_margin"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/timer"/>
+                android:src="@drawable/percent"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/card_title"
+                android:layout_below="@id/card_title25"
                 android:layout_marginStart="@dimen/card_content_margin"
                 android:layout_marginTop="@dimen/content_gap_margin"
                 android:layout_marginBottom="@dimen/card_content_margin"
@@ -98,7 +142,7 @@
                 android:textSize="@dimen/card_text_size_small"
                 android:textColor="@color/card_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="00:00:00"/>
+                android:text="50"/>
 
         </RelativeLayout>
 

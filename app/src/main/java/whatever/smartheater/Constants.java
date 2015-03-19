@@ -5,4 +5,5 @@ package whatever.smartheater;
  */
 public class Constants {
     public static String WATER_PERCENT = "water percent";
+    public static int ANIMATION_TIME = 500;
 }
