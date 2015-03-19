@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TransitionFirstActivity">
 
-    <item android:id="@+id/action_equalizer"
-        android:title="@string/action_equalizer"
-        android:icon="@drawable/ic_equalizer_white"
+    <item android:id="@+id/action_add_alarm"
+        android:title="@string/action_bluetooth"
+        android:icon="@drawable/ic_alarm_add_white"
+        android:onClick="showTimePickerDialog"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/action_bluetooth"
@@ -14,8 +15,13 @@
         android:icon="@drawable/ic_bluetooth_white"
         app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/action_equalizer"
+        android:title="@string/action_equalizer"
+        android:icon="@drawable/ic_equalizer_white"
+        app:showAsAction="ifRoom" />
+
+    <!--item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
-        app:showAsAction="never" />
+        app:showAsAction="never" /-->
 </menu>

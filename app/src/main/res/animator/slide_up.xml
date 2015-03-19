@@ -4,7 +4,7 @@
     <set android:interpolator="@android:anim/accelerate_interpolator">
 
         <objectAnimator
-            android:propertyName="translateY"
+            android:propertyName="translationY"
             android:duration="500"
             android:valueTo="220"
             android:valueType="floatType"/>

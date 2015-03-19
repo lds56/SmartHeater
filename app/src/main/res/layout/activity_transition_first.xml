@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wave="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyActivity"
-    >
+    tools:context=".MyActivity">
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,6 +30,45 @@
         android:background="@color/theme_default_primary"
         android:id="@+id/holder_view">
 
+
+        <whatever.smartheater.waveview.WaveView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transitionName="holder1"
+            wave:progress="50"
+            wave:wave_hz="slow"
+            android:background="@color/theme_default_primary"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fat_bar_text_margin_top"
+            android:id="@+id/water_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/water_temp"
+                android:fontFamily="sans-serif-thin"
+                android:textColor="@color/fat_bar_text_color"
+                android:layout_centerHorizontal="true"
+                android:textSize="100sp"
+                android:text="34"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/water_degree"
+                android:layout_toEndOf="@id/water_temp"
+                android:gravity="center"
+                android:textColor="@color/fat_bar_text_color"
+                android:fontFamily="sans-serif-light"
+                android:textSize="40sp"
+                android:text="°C"/>
+            </RelativeLayout>
+
+
     </RelativeLayout>
 
     <android.support.v7.widget.Toolbar
@@ -41,15 +80,6 @@
         app:theme="@style/ToolBarStyle"
         android:minHeight="?attr/actionBarSize"/>
 
-
-        <!--com.saulmm.material.waveview.WaveView
-            android:layout_width="match_parent"
-            android:layout_height="224dp"
-            android:id="@+id/holder_view"
-            android:layout_below="@id/toolbar"
-            android:transitionName="holder1"
-            android:background="?android:colorPrimary"
-            /-->
 
 
     <!--android.support.v4.widget.DrawerLayout
@@ -124,18 +154,19 @@
         android:layout_below="@id/holder_view"
         android:background="@drawable/bottom_shadow2"/>
 
-    <Button
+    <ImageButton
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fab_button"
-        android:layout_width="@dimen/fab_size"
-        android:layout_height="@dimen/fab_size"
-        android:background="@drawable/ic_whatshot_fab"
-        android:elevation="5dp"
-
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_whatshot_fab"
+        android:background="@android:color/transparent"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/holder_view"
         android:layout_marginTop="-26dp"
         android:layout_alignParentEnd="true"
         />
+
 
 </RelativeLayout>

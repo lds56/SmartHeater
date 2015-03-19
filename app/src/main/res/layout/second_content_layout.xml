@@ -56,7 +56,7 @@
                 android:textSize="@dimen/card_text_size_small"
                 android:textColor="@color/card_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="34 °C"/>
+                android:text="34°C"/>
 
         </RelativeLayout>
 

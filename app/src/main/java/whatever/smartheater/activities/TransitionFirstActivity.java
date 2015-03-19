@@ -1,6 +1,11 @@
 package whatever.smartheater.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -12,13 +17,18 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.Toast;
+import static whatever.smartheater.Constants.*;
 
 
+import java.util.HashMap;
+
+import whatever.smartheater.Objects.StatusListener;
+import whatever.smartheater.Objects.StatusMonitor;
 import whatever.smartheater.R;
 import whatever.smartheater.Utils;
 import whatever.smartheater.fragments.BluetoothDialogFragment;
+import whatever.smartheater.fragments.TimePickerFragment;
 
 public class TransitionFirstActivity extends ActionBarActivity {
 
@@ -51,8 +61,10 @@ public class TransitionFirstActivity extends ActionBarActivity {
         //Utils.configureFab(fabButton);
 
         configureToolbar();
+        configureAnimation();
         //configureDrawer();
         configureContent();
+        initializeObjects();
     }
 
 
@@ -98,9 +110,6 @@ public class TransitionFirstActivity extends ActionBarActivity {
                 Log.i("oo", "Invalid position");
             }
 
-
-
-
             //Intent i  = new Intent (TransitionFirstActivity.this, TransitionSecondActivity.class);
 
             //ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(TransitionFirstActivity.this,
@@ -129,9 +138,14 @@ public class TransitionFirstActivity extends ActionBarActivity {
                         FragmentManager fm = getSupportFragmentManager();
                         BluetoothDialogFragment btDialog = new BluetoothDialogFragment();
                         btDialog.show(fm, "tag");
+
                         return true;
                     case R.id.action_equalizer:
+
                         Toast.makeText(TransitionFirstActivity.this, "equalizer", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.action_add_alarm:
+                        Toast.makeText(TransitionFirstActivity.this, "add alarm", Toast.LENGTH_SHORT).show();
                         return true;
                 }
 
@@ -218,5 +232,37 @@ public class TransitionFirstActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
+    }
+
+    public void showTimePickerDialog(MenuItem menuItem) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "timePicker");
+    }
+
+    private void configureAnimation() {
+        View waterTempView = findViewById(R.id.water_container);
+        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(
+                TransitionFirstActivity.this, R.animator.flucation);
+
+        /* set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                this.start();
+            }
+        }); */
+
+        set.setTarget(waterTempView);
+        set.start();
+    }
+
+    private void initializeObjects() {
+        StatusMonitor statusMonitor = StatusMonitor.getInstance();
+        statusMonitor.setStatusLisenter(new StatusListener() {
+            @Override
+            public void onChange(HashMap<String, Double> msgs) {
+                int waterPercent = Math.round(msgs.get(WATER_PERCENT).intValue());
+            }
+        });
     }
 }

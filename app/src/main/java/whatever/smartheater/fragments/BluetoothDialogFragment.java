@@ -26,7 +26,7 @@ public class BluetoothDialogFragment extends DialogFragment {
 
         //builder.setView(dialoglayout);
         builder.setTitle(R.string.dialog_title)
-            /*.setPositiveButton(R.string.connect, new DialogInterface.OnClickListener() {
+            .setPositiveButton(R.string.connect, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // FIRE ZE MISSILES!
                 }
@@ -35,7 +35,7 @@ public class BluetoothDialogFragment extends DialogFragment {
                 public void onClick(DialogInterface dialog, int id) {
                     // User cancelled the dialog
                 }
-            }) */
+            })
             .setItems(itemList, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     // The 'which' argument contains the index position
