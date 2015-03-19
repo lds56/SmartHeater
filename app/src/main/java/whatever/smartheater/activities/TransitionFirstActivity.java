@@ -259,19 +259,12 @@ public class TransitionFirstActivity extends ActionBarActivity {
         AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(
                 TransitionFirstActivity.this, R.animator.flucation);
 
-        /* set.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                this.start();
-            }
-        }); */
-
         set.setTarget(waterTempView);
         set.start();
     }
 
     private void initializeObjects() {
+        // TODO implement status listener
         StatusMonitor statusMonitor = StatusMonitor.getInstance();
         statusMonitor.setStatusLisenter(new StatusListener() {
             @Override

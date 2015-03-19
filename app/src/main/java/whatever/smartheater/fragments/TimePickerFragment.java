@@ -28,6 +28,7 @@ public class TimePickerFragment extends DialogFragment
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        // TODO Add Alarm
         // Do something with the time chosen by the user
     }
 }
