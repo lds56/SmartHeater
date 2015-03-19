@@ -96,7 +96,7 @@ public class TransitionFirstActivity extends ActionBarActivity {
 
                 // Fat Bar animation
                 waveView.animate().alpha(0).setDuration(ANIMATION_TIME);
-                waterContainer.animate().alpha(0).setDuration(ANIMATION_TIME / 2);
+                waterContainer.animate().alpha(0).setStartDelay(0).setDuration(ANIMATION_TIME / 2);
 
                 Utils.slideUp(fatBar, barGap);
                 Utils.slideUp(shadowBar, barGap);

@@ -20,7 +20,7 @@
     <dimen name="right_length">350dp</dimen>
     <dimen name="card_margin">10dp</dimen>
     <dimen name="card_content_margin">20dp</dimen>
-    <dimen name="content_gap_margin">10dp</dimen>
+    <dimen name="content_gap_margin">4dp</dimen>
     <dimen name="card_text_size">25dp</dimen>
     <dimen name="card_img_size">60dp</dimen>
     <dimen name="card_text_size_small">20dp</dimen>
