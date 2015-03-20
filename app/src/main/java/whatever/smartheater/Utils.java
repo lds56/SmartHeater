@@ -5,6 +5,8 @@ package whatever.smartheater;
 //import android.transition.Slide;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+
 import static whatever.smartheater.Constants.*;
 //import android.view.animation.PathInterpolator;
 
@@ -36,6 +38,14 @@ public class Utils {
         return theView.getY() + theView.getHeight()/2;
     }
 
+    public static float getAvgX(View theView, View anotherView) {
+        return (theView.getX() + anotherView.getX())/2;
+    }
+
+    public static float getAvgY(View theView, View anotherView) {
+        return (theView.getY() + anotherView.getY())/2;
+    }
+
     public static void slideUp(View theView, float delta) {
         theView.animate().setInterpolator(new AccelerateDecelerateInterpolator())
                 .translationY(-delta)
@@ -47,4 +57,34 @@ public class Utils {
                 .translationY(0)
                 .setDuration(ANIMATION_TIME);
     }
+
+    public static void moveTo(View theView, View theTargetView, float aimAlpha) {
+        theView.animate().setInterpolator(new AccelerateDecelerateInterpolator())
+                .x(Utils.getCenterX(theTargetView) - theView.getWidth() / 2)
+                .y(Utils.getCenterY(theTargetView) - theView.getHeight() / 2)
+                .alpha(aimAlpha)
+                .setDuration(ANIMATION_TIME);
+    }
+
+    public static void moveWith(final View theView, final View theTargetView, final float aimScale1, final float aimScale2) {
+
+        Runnable endAction = new Runnable() {
+            public void run() {
+                theView.animate().setInterpolator(new LinearInterpolator())
+                        .x(theTargetView.getX())
+                        .y(theTargetView.getY())
+                        .alpha(aimScale2).alpha(aimScale2)
+                        .setDuration(ANIMATION_TIME / 2);
+            }
+        };
+
+        theView.animate().setInterpolator(new LinearInterpolator())
+                .x( Utils.getAvgX(theView, theTargetView) )
+                .y( Utils.getAvgY(theView, theTargetView) )
+                .alpha(aimScale1).alpha(aimScale1)
+                .setDuration(ANIMATION_TIME / 2)
+                .withEndAction(endAction);
+
+    }
+
 }

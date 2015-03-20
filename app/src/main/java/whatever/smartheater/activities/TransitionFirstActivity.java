@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import static whatever.smartheater.Constants.*;
 
@@ -28,6 +30,7 @@ import whatever.smartheater.Objects.StatusMonitor;
 import whatever.smartheater.R;
 import whatever.smartheater.Utils;
 import whatever.smartheater.fragments.BluetoothDialogFragment;
+import whatever.smartheater.fragments.TempPickerFragment;
 import whatever.smartheater.fragments.TimePickerFragment;
 
 public class TransitionFirstActivity extends ActionBarActivity {
@@ -37,6 +40,18 @@ public class TransitionFirstActivity extends ActionBarActivity {
     private Button startButton;
     private Button endButton;
     private Toolbar mainToolbar;
+
+    private View fireImg;
+    private View stopImg;
+
+    private View fatBar;
+    private View shadowBar;
+
+    private View waterContainer;
+    private View waveView;
+
+    private View contentList;
+
     //private DrawerLayout mDrawerLayout;
     //private ActionBarDrawerToggle mDrawerToggle;
 
@@ -56,6 +71,16 @@ public class TransitionFirstActivity extends ActionBarActivity {
         startButton = (Button) findViewById(R.id.start_position);
         endButton = (Button) findViewById(R.id.end_position);
 
+        fireImg = findViewById(R.id.fire_img);
+        stopImg = findViewById(R.id.stop_img);
+
+        fatBar = findViewById(R.id.holder_view);
+        shadowBar = findViewById(R.id.shadow_bar);
+
+        waterContainer = findViewById(R.id.water_container);
+        waveView = findViewById(R.id.wave_view);
+
+        contentList = findViewById(R.id.content_list);
 
         mainToolbar = (Toolbar) findViewById(R.id.toolbar);
         //Utils.configureFab(fabButton);
@@ -72,14 +97,6 @@ public class TransitionFirstActivity extends ActionBarActivity {
         @Override
         public void onClick(View view) {
 
-            View fatBar = findViewById(R.id.holder_view);
-            View shadowBar = findViewById(R.id.shadow_bar);
-            View waterContainer = findViewById(R.id.water_container);
-            View waveView = findViewById(R.id.wave_view);
-
-            View contentList = findViewById(R.id.content_list);
-            View contentList2 = findViewById(R.id.content_list2);
-
             float barGap = fatBar.getHeight() - mainToolbar.getHeight();
             float bottomGap = contentList.getHeight();
             Log.i("oo", "now: " + view.getX());
@@ -88,13 +105,13 @@ public class TransitionFirstActivity extends ActionBarActivity {
             if (Utils.getCenterX(view) == Utils.getCenterX(startButton)) { // Move down
 
                 // FAB animation
-                fabButton.animate().setInterpolator(new AccelerateDecelerateInterpolator())
-                        .x(Utils.getCenterX(endButton) - view.getWidth() / 2)
-                        .y(Utils.getCenterY(endButton) - view.getHeight() / 2)
-                        .setDuration(500);
 
+                Utils.moveTo(view, endButton, APPEAR_ALPHA);
+                Utils.moveTo(fireImg, endButton, DISAPPEAR_ALPHA);
+                Utils.moveTo(stopImg, endButton, APPEAR_ALPHA);
 
                 // Fat Bar animation
+
                 waveView.animate().alpha(0).setDuration(ANIMATION_TIME);
                 waterContainer.animate().alpha(0).setStartDelay(0).setDuration(ANIMATION_TIME / 2);
 
@@ -105,13 +122,15 @@ public class TransitionFirstActivity extends ActionBarActivity {
                 Utils.slideUp(contentList, -bottomGap);
 
             } else if (Utils.getCenterX(view) == Utils.getCenterX(endButton)) { //Move up
-                fabButton.animate().setInterpolator(new AccelerateDecelerateInterpolator())
-                        .x(Utils.getCenterX(startButton) - view.getWidth() / 2)
-                        .y(Utils.getCenterY(startButton) - view.getHeight() / 2)
-                        .setDuration(500);
 
+                // FAB animation
+
+                Utils.moveTo(view, startButton, APPEAR_ALPHA);
+                Utils.moveTo(fireImg, startButton, APPEAR_ALPHA);
+                Utils.moveTo(stopImg, startButton, DISAPPEAR_ALPHA);
 
                 // Fat Bar animation
+
                 waveView.animate().alpha(1).setDuration(ANIMATION_TIME);
                 waterContainer.animate().alpha(1).setStartDelay(ANIMATION_TIME / 2).setDuration(ANIMATION_TIME / 2);
 
@@ -160,7 +179,11 @@ public class TransitionFirstActivity extends ActionBarActivity {
                         Toast.makeText(TransitionFirstActivity.this, "equalizer", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_add_alarm:
-                        Toast.makeText(TransitionFirstActivity.this, "add alarm", Toast.LENGTH_SHORT).show();
+
+                        FragmentManager fm2 = getSupportFragmentManager();
+                        TempPickerFragment tpDialog = new TempPickerFragment();
+                        tpDialog.show(fm2, "tag");
+                        //Toast.makeText(TransitionFirstActivity.this, "add alarm", Toast.LENGTH_SHORT).show();
                         return true;
                 }
 
@@ -249,10 +272,10 @@ public class TransitionFirstActivity extends ActionBarActivity {
         return true;
     }
 
-    public void showTimePickerDialog(MenuItem menuItem) {
+    /*public void showTimePickerDialog(MenuItem menuItem) {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "timePicker");
-    }
+    }*/
 
     private void configureAnimation() {
         View waterTempView = findViewById(R.id.water_container);

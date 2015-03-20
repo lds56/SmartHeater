@@ -1,5 +1,7 @@
 package whatever.smartheater.Objects;
 
+import java.util.HashMap;
+
 /**
  * Created by lds on 3/19/15.
  */
@@ -14,6 +16,9 @@ public class StatusMonitor {
         this.statusListener = statusListener;
     }
 
+    public void invokeListener(HashMap<String, Double> msgs) {
+        statusListener.onChange(msgs);
+    }
     /**
      * TODO status listener
      * When status changed, call statusListener.onChange([Some Changing Information])

@@ -19,6 +19,8 @@
     <string name="action_equalizer">Action Equalizer</string>
     <string name="action_bluetooth">Action Bluetooth</string>
     <string name="dialog_title">Bluetooth List</string>
+    <string name="dialog_ok">ok</string>
+    <string name="dialog_cancel">cancel</string>
     <string name="connect">Connect</string>
     <string name="cancel">Cancel</string>
 

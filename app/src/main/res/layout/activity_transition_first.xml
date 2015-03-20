@@ -117,8 +117,8 @@
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         android:id="@+id/end_position"
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_alignParentBottom="true"
@@ -156,7 +156,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="10dp"
         android:id="@+id/shadow_bar"
         android:layout_below="@id/holder_view"
         android:background="@drawable/bottom_shadow2"/>
@@ -167,7 +167,7 @@
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_whatshot_fab"
+        android:src="@drawable/fab_circle"
         android:background="@android:color/transparent"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/holder_view"
@@ -175,5 +175,26 @@
         android:layout_alignParentEnd="true"
         />
 
+    <ImageView
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:id="@+id/stop_img"
+        android:src="@drawable/stop_icon"
+        android:alpha="0"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/holder_view"
+        android:layout_marginTop="-26dp"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:id="@+id/fire_img"
+        android:src="@drawable/fire_icon"
+        android:visibility="visible"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/holder_view"
+        android:layout_marginTop="-26dp"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
