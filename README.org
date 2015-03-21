@@ -2,13 +2,17 @@
 
 ** TODO-LIST
 *** TODO [#A] Basic Functio
-*** TODO [#A] UI [%]
-**** TODO View switching [1/2]
+*** TODO [#A] UI [40%]
+**** TODO View switching [2/2]
 ***** DONE View A1 and View A2
 	  CLOSED: [2015-03-18 Wed 22:35]
-***** TODO View A and View B 
-**** TODO Statistics View
-	 SCHEDULED: <2015-03-19 Thu>
+***** DONE View A and View B 
+	  CLOSED: [2015-03-21 Sat 16:15]
+***** TODO View A launch View B
+
+**** DONE Statistics View	
+	 CLOSED: [2015-03-21 Sat 16:14] SCHEDULED: <2015-03-19 Thu>
 **** TODO Live digital clock
-**** TODO Color
-**** TODO Drawer
+**** DONE Color
+	 CLOSED: [2015-03-21 Sat 16:14]
+**** TODO Drawer (May deprecated)
