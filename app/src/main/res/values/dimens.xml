@@ -29,5 +29,10 @@
     <dimen name="fat_bar_height">276dp</dimen>
     <dimen name="fat_bar_text_margin_top">80dp</dimen>
 
+    <dimen name="chart_card_margin">10dp</dimen>
+    <dimen name="half_chart_card_margin">10dp</dimen>
+    <dimen name="chart_padding">10dp</dimen>
+    <dimen name="chart_bottom_padding">117dp</dimen>
+    <dimen name="square_card_height_diff">8dp</dimen>
 
 </resources>

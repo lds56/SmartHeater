@@ -1,11 +1,8 @@
 package whatever.smartheater.activities;
 
-import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -14,24 +11,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 import static whatever.smartheater.Constants.*;
 
 
 import java.util.HashMap;
 
-import whatever.smartheater.Objects.StatusListener;
-import whatever.smartheater.Objects.StatusMonitor;
+import whatever.smartheater.roles.StatusListener;
+import whatever.smartheater.roles.StatusMonitor;
 import whatever.smartheater.R;
 import whatever.smartheater.Utils;
 import whatever.smartheater.fragments.BluetoothDialogFragment;
 import whatever.smartheater.fragments.TempPickerFragment;
-import whatever.smartheater.fragments.TimePickerFragment;
 
 public class TransitionFirstActivity extends ActionBarActivity {
 

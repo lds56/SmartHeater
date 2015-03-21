@@ -5,7 +5,14 @@
 
         <activity
             android:name=".activities.TransitionFirstActivity"
-            android:label="" >
+            android:label="smartHEater" >
+
+        </activity>
+
+        <activity
+            android:name=".activities.SlidingActivity"
+            android:label="@string/title_activity_my_activity2" >
+
 
 
             <intent-filter>
@@ -14,11 +21,6 @@
             </intent-filter>
 
         </activity>
-
-        <!--activity
-            android:name=".activities.TransitionSecondActivity"
-            android:label="@string/title_activity_my_activity2" >
-        </activity-->
 
         <!--activity
             android:name=".NavDrawerActivity"

@@ -12,4 +12,13 @@ public class Constants {
     public final static float DISAPPEAR_HALF_ALPHA = 0.5f;
     public final static float APPEAR_ALPHA = 1.0f;
     public final static float APPEAR_HALF_ALPHA = 0.5f;
+
+    public static final String PAINT_COLOR = "paint color";
+    public static final String DOTS_COLOR = "dots color";
+    public static final String DOTS_STRIKE_COLOR = "dots strike color";
+    public static final String LINE_COLOR = "line color";
+    public static final String DASH_LINE_COLOR = "dash line color";
+    public static final String HOVER_TEXT_COLOR = "hover text color";
+    public static final String SCREEN_WIDTH = "screen width";
+    public static final String CARD_PADDING = "card padding";
 }

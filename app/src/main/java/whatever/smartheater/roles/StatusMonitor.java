@@ -1,4 +1,4 @@
-package whatever.smartheater.Objects;
+package whatever.smartheater.roles;
 
 import java.util.HashMap;
 

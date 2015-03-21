@@ -1,4 +1,4 @@
-package whatever.smartheater.Objects;
+package whatever.smartheater.roles;
 
 /**
  * Created by lds on 3/19/15.
