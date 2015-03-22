@@ -37,17 +37,6 @@
         android:id="@+id/holder_view">
 
 
-        <whatever.smartheater.waveview.WaveView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/wave_view"
-            android:transitionName="holder1"
-            wave:progress="50"
-            wave:wave_hz="slow"
-            android:background="@color/theme_default_primary"
-            />
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +62,21 @@
                 android:fontFamily="sans-serif-light"
                 android:textSize="40sp"
                 android:text="°C"/>
-            </RelativeLayout>
+        </RelativeLayout>
+
+        <whatever.smartheater.waveview.WaveView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/wave_view"
+            android:transitionName="holder1"
+            wave:progress="50"
+            wave:wave_hz="slow"
+            wave:above_wave_color="@android:color/transparent"
+            wave:blow_wave_color="@android:color/white"
+            android:background="@android:color/transparent"
+            />
+
+
 
 
     </RelativeLayout>

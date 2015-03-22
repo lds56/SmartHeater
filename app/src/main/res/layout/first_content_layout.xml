@@ -19,11 +19,12 @@
 
             <ImageView
                 android:layout_width="@dimen/item_height"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/item_height"
+                android:scaleType="fitCenter"
                 android:layout_margin="10dp"
                 android:layout_centerVertical="true"
                 android:id="@+id/left_image1"
-                android:src="@drawable/ic_access_alarm_pink"/>
+                android:src="@drawable/ic_access_alarm"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -58,14 +59,14 @@
 
             </LinearLayout>
 
-            <ImageButton
+            <!--ImageButton
                 android:layout_width="@dimen/item_height"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_add_alarm_pink"
                 android:layout_marginEnd="@dimen/riw_right_margin"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true" /-->
         </RelativeLayout>
 
         <RelativeLayout
