@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.text.format.DateFormat;
 import android.widget.TimePicker;
 
@@ -28,6 +29,11 @@ public class TimePickerFragment extends DialogFragment
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+        FragmentManager fm2 = getActivity().getSupportFragmentManager();
+        TempPickerFragment tpDialog = new TempPickerFragment();
+        tpDialog.show(fm2, "tag");
+        
         // TODO Add Alarm
         // Do something with the time chosen by the user
     }

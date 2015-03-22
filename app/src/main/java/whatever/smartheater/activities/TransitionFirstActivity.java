@@ -2,6 +2,7 @@ package whatever.smartheater.activities;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
@@ -19,6 +20,7 @@ import static whatever.smartheater.Constants.*;
 
 import java.util.HashMap;
 
+import whatever.smartheater.fragments.TimePickerFragment;
 import whatever.smartheater.roles.StatusListener;
 import whatever.smartheater.roles.StatusMonitor;
 import whatever.smartheater.R;
@@ -152,7 +154,6 @@ public class TransitionFirstActivity extends ActionBarActivity {
         //mainToolbar.inflateMenu(R.menu.toolbar_menu);
 
         setSupportActionBar(mainToolbar);
-        //getSupportActionBar().setTitle("Sliding");
 
         mainToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -169,13 +170,19 @@ public class TransitionFirstActivity extends ActionBarActivity {
                         return true;
                     case R.id.action_equalizer:
 
-                        Toast.makeText(TransitionFirstActivity.this, "equalizer", Toast.LENGTH_SHORT).show();
+                        Intent i  = new Intent (TransitionFirstActivity.this, SlidingActivity.class);
+                        //ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(TransitionFirstActivity.this,
+                        //        Pair.create(fabButton, "fab"));
+                        startActivity(i);
+
+                        //Toast.makeText(TransitionFirstActivity.this, "equalizer", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_add_alarm:
 
                         FragmentManager fm2 = getSupportFragmentManager();
-                        TempPickerFragment tpDialog = new TempPickerFragment();
+                        TimePickerFragment tpDialog = new TimePickerFragment();
                         tpDialog.show(fm2, "tag");
+
                         //Toast.makeText(TransitionFirstActivity.this, "add alarm", Toast.LENGTH_SHORT).show();
                         return true;
                 }

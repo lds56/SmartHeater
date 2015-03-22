@@ -166,13 +166,12 @@
         android:id="@+id/fab_button"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
-        android:src="@drawable/fab_circle"
         android:background="@android:color/transparent"
+        android:src="@drawable/fab_circle"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/holder_view"
         android:layout_marginTop="-26dp"
         android:layout_alignParentEnd="true"
-
         />
 
     <ImageView

@@ -2,6 +2,8 @@ package whatever.smartheater.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -23,6 +25,7 @@ public class TempPickerFragment extends DialogFragment {
         NumberPicker np = (NumberPicker) npView.findViewById(R.id.number_picker);
         np.setMaxValue(100);
         np.setMinValue(0);
+        setDividerColor(np);
 
         return new AlertDialog.Builder(getActivity())
                 .setTitle("Please Choose a suitable temperature :)")
@@ -30,8 +33,6 @@ public class TempPickerFragment extends DialogFragment {
                 .setPositiveButton(R.string.dialog_ok,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                DialogFragment newFragment = new TimePickerFragment();
-                                newFragment.show(getActivity().getSupportFragmentManager(), "timePicker");
                             }
                         })
                 .setNegativeButton(R.string.dialog_cancel,
@@ -40,5 +41,27 @@ public class TempPickerFragment extends DialogFragment {
                             }
                         })
                 .create();
+    }
+
+    private void setDividerColor (NumberPicker picker) {
+
+        java.lang.reflect.Field[] pickerFields = NumberPicker.class.getDeclaredFields();
+        for (java.lang.reflect.Field pf : pickerFields) {
+            if (pf.getName().equals("mSelectionDivider")) {
+                pf.setAccessible(true);
+                try {
+                    pf.set(picker, new ColorDrawable(getResources().getColor(R.color.theme_default_primary)));
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
+                } catch (Resources.NotFoundException e) {
+                    e.printStackTrace();
+                }
+                catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+        }
+        //}
     }
 }

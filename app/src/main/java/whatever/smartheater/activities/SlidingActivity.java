@@ -19,14 +19,20 @@ package whatever.smartheater.activities;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import whatever.smartheater.fragments.DatePickerFragment;
+import whatever.smartheater.fragments.TempPickerFragment;
 import whatever.smartheater.slidingtabs.fragments.SlidingTabsBasicFragment;
 import whatever.smartheater.R;
 
@@ -43,20 +49,42 @@ public class SlidingActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             SlidingTabsBasicFragment fragment = new SlidingTabsBasicFragment();
-            transaction.replace(R.id.sample_content_fragment, fragment);
+            transaction.replace(R.id.container, fragment);
             transaction.commit();
         }
 
         configureToolbar();
-        configureDrawer();
+        //configureDrawer();
     }
 
     private void configureToolbar() {
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mainToolbar);
-        getSupportActionBar().setTitle("Sliding");
+        getSupportActionBar().setTitle("Charts");
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        mainToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        /* mainToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+
+                switch (menuItem.getItemId()) {
+                    case R.id.action_date:
+                        FragmentManager fm = getSupportFragmentManager();
+                        DatePickerFragment dpDialog = new DatePickerFragment();
+                        dpDialog.show(fm, "tag");
+                        return true;
+                    case android.R.id.home:
+                        NavUtils.navigateUpFromSameTask(this);
+                        return true;
+                }
+                return false;
+            }
+        }); */
+
+        /*mainToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -67,10 +95,35 @@ public class SlidingActivity extends ActionBarActivity {
                     mDrawerLayout.openDrawer(Gravity.START);
                 }
             }
-        });
+        });*/
     }
 
-    private void configureDrawer() {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sliding_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                Log.i("SLIDINE", "Click HOMe");
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+
+            case R.id.action_date:
+                FragmentManager fm = getSupportFragmentManager();
+                DatePickerFragment dpDialog = new DatePickerFragment();
+                dpDialog.show(fm, "tag");
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*private void configureDrawer() {
         // Configure drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -88,9 +141,9 @@ public class SlidingActivity extends ActionBarActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
@@ -110,5 +163,5 @@ public class SlidingActivity extends ActionBarActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
-    }
+    }*/
 }

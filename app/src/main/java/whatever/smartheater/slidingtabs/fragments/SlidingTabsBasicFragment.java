@@ -98,14 +98,14 @@ public class SlidingTabsBasicFragment extends Fragment {
      * {@link SlidingTabLayout}.
      */
     class SamplePagerAdapter extends PagerAdapter {
-        final String [] TITLES = {"Day", "Week", "Year"};
+        final String [] TITLES = {"Day", "Week", "Month", "Year"};
 
         /**
          * @return the number of pages to display
          */
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         /**
@@ -150,6 +150,8 @@ public class SlidingTabsBasicFragment extends Fragment {
              final  String[] lineLabels = {"", "ANT", "GNU", "OWL", "APE", "JAY", ""};
              final  float[][] lineValues = { {-5f, 6f, 2f, 9f, 0f, 1f, 5f},
                     {-9f, -2f, -4f, -3f, -7f, -5f, -3f}};
+
+            // TODO Add User's Data
 
             Display display = getActivity().getWindowManager().getDefaultDisplay();
             Point size = new Point();
