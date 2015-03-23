@@ -3,12 +3,13 @@
 ** TODO-LIST
 *** TODO [#A] Basic Functio
 *** TODO [#A] UI [40%]
-**** TODO View switching [2/2]
+**** TODO View switching [3/3]
 ***** DONE View A1 and View A2
 	  CLOSED: [2015-03-18 Wed 22:35]
 ***** DONE View A and View B 
 	  CLOSED: [2015-03-21 Sat 16:15]
-***** TODO View A launch View B
+***** DONE View A launch View B
+	  CLOSED: [2015-03-23 Mon 11:05]
 
 **** DONE Statistics View	
 	 CLOSED: [2015-03-21 Sat 16:14] SCHEDULED: <2015-03-19 Thu>
@@ -16,3 +17,4 @@
 **** DONE Color
 	 CLOSED: [2015-03-21 Sat 16:14]
 **** TODO Drawer (May deprecated)
+**** TODO View A2 fade in
