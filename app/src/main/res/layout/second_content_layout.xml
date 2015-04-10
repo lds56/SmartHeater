@@ -47,6 +47,7 @@
                 android:src="@drawable/timer"/>
 
             <TextView
+                android:id="@+id/heater_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/card_title"
@@ -89,6 +90,7 @@
                 android:src="@drawable/temp"/>
 
             <TextView
+                android:id="@+id/water_temp_onheat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/card_title2"
@@ -174,6 +176,7 @@
                 android:src="@drawable/up"/>
 
             <TextView
+                android:id="@+id/heater_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/card_title3"

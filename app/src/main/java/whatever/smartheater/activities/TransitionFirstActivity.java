@@ -14,19 +14,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
-import static whatever.smartheater.Constants.*;
 
-
-import java.util.HashMap;
-
-import whatever.smartheater.fragments.TimePickerFragment;
-import whatever.smartheater.roles.StatusListener;
-import whatever.smartheater.roles.StatusMonitor;
 import whatever.smartheater.R;
 import whatever.smartheater.Utils;
 import whatever.smartheater.fragments.BluetoothDialogFragment;
-import whatever.smartheater.fragments.TempPickerFragment;
+import whatever.smartheater.fragments.TimePickerFragment;
+import whatever.smartheater.roles.HeatStatus;
+import whatever.smartheater.roles.HeaterController;
+import whatever.smartheater.roles.TempListener;
+
+import static whatever.smartheater.Constants.ANIMATION_TIME;
+import static whatever.smartheater.Constants.APPEAR_ALPHA;
+import static whatever.smartheater.Constants.DISAPPEAR_ALPHA;
 
 public class TransitionFirstActivity extends ActionBarActivity {
 
@@ -46,6 +47,12 @@ public class TransitionFirstActivity extends ActionBarActivity {
     private View waveView;
 
     private View contentList;
+
+    private TempListener tempListener = null;
+    public HeaterController heaterController = null;
+
+    HeatStatus heatStatus = new HeatStatus();
+
 
     //private DrawerLayout mDrawerLayout;
     //private ActionBarDrawerToggle mDrawerToggle;
@@ -115,6 +122,12 @@ public class TransitionFirstActivity extends ActionBarActivity {
 
                 // Content
                 Utils.slideUp(contentList, -bottomGap);
+				
+				// heater on
+                tempListener.resetTimer();
+                heatStatus.reset();
+                heatStatus.onHeating = true;
+                heaterController.startHeating();
 
             } else if (Utils.getCenterX(view) == Utils.getCenterX(endButton)) { //Move up
 
@@ -134,6 +147,12 @@ public class TransitionFirstActivity extends ActionBarActivity {
 
                 //Content
                 Utils.slideDown(contentList);
+				
+				// heater off
+                tempListener.resetTimer();
+                heatStatus.reset();
+                heatStatus.onStopping = true;
+                heaterController.stopHeating();
 
             } else {
                 Log.i("oo", "Invalid position");
@@ -288,12 +307,24 @@ public class TransitionFirstActivity extends ActionBarActivity {
 
     private void initializeObjects() {
         // TODO implement status listener
-        StatusMonitor statusMonitor = StatusMonitor.getInstance();
+        /*StatusMonitor statusMonitor = StatusMonitor.getInstance();
         statusMonitor.setStatusLisenter(new StatusListener() {
             @Override
             public void onChange(HashMap<String, Double> msgs) {
                 int waterPercent = Math.round(msgs.get(WATER_PERCENT).intValue());
             }
-        });
+        });*/
+
+        heaterController = new HeaterController(heatStatus);
+        heaterController.open();
+
+        TextView tmView = (TextView)findViewById(R.id.water_temp);
+        TextView tmhView = (TextView)findViewById(R.id.water_temp_onheat);
+        TextView hstView = (TextView)findViewById(R.id.heater_status);
+        TextView timerView = (TextView)findViewById(R.id.heater_timer);
+        tempListener = new TempListener(heatStatus, tmView, tmhView, hstView, timerView, heaterController);
+        tempListener.open();
+
+
     }
 }

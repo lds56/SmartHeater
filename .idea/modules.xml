@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SmartHeater.iml" filepath="$PROJECT_DIR$/SmartHeater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartHeater0.iml" filepath="$PROJECT_DIR$/SmartHeater0.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
